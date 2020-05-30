@@ -38,7 +38,15 @@ namespace Students_Task
                 {
                     isEverythingAlright = false;
                 }
+                else
+                {
+                    isEverythingAlright = true;
+
+                    //making sure loop doesnot continue before the user can change the wrong row
+                    string h = Console.ReadLine();
+                }
             }
+
             //Create menu as dictionary with commands
             Dictionary<int, string> commands = new Dictionary<int, string>()
             {
@@ -447,7 +455,7 @@ namespace Students_Task
         private static bool IsEmptyOrWhiteSpace(string value) =>
                     value.All(char.IsWhiteSpace);
 
-        public static void RemoveAt<T>(ref T[] arr, int index)
+        private static void RemoveAt<T>(ref T[] arr, int index)
         {
             for (int a = index; a < arr.Length - 1; a++)
             {
