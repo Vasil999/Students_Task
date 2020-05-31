@@ -216,6 +216,8 @@ namespace Students_Task
 
         private static void ShowAllStudents()
         {
+            SetConsoleWidth();
+            Console.BufferWidth = Console.LargestWindowWidth;
             //We don't want to show the personal identification number, as it is private
             PrintLine();
 
@@ -259,6 +261,7 @@ namespace Students_Task
 
             //Saving personal identification number as string identNum
             string identNum = Console.ReadLine();
+            SetConsoleWidth();
 
             string[] students = File.ReadAllLines(@"C:\Users\vasil\source\repos\Students_Task\Files\Students.txt");
 
@@ -292,6 +295,8 @@ namespace Students_Task
         {
             Console.WriteLine("Please enter the student number of the student");
             string identNum = Console.ReadLine();
+
+            SetConsoleWidth();
 
             string[] students = File.ReadAllLines(@"C:\Users\vasil\source\repos\Students_Task\Files\Students.txt");
 
@@ -428,6 +433,7 @@ namespace Students_Task
 
         private static void ShowAvarageGrades()
         {
+            SetConsoleWidth();
             string[] students = File.ReadAllLines(@"C:\Users\vasil\source\repos\Students_Task\Files\Students.txt");
 
             foreach (string student in students)
@@ -464,6 +470,15 @@ namespace Students_Task
             }
             // decrement Array's size by one
             Array.Resize(ref arr, arr.Length - 1);
+        }
+
+        private static void SetConsoleWidth()
+        {
+            Console.WindowWidth = Console.LargestWindowWidth;
+            if (Console.WindowWidth < tableWidth)
+            {
+                Console.BufferWidth = tableWidth;
+            }
         }
         #endregion
 
