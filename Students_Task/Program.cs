@@ -461,7 +461,7 @@ namespace Students_Task
         private static bool IsEmptyOrWhiteSpace(string value) =>
                     value.All(char.IsWhiteSpace);
 
-        private static void RemoveAt<T>(ref T[] arr, int index)
+        private static void RemoveAt<ArraySegment>(ref ArraySegment[] arr, int index)
         {
             for (int a = index; a < arr.Length - 1; a++)
             {
