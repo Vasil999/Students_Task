@@ -367,6 +367,7 @@ namespace Students_Task
 
         private static void AddStudent()
         {
+            SetConsoleWidth();
             //Showing entering pattern to the user
             Console.WriteLine("Use the following pattern without entering punctuation marks:" +
                     "\nfirst name   middle Name   last name   personal identification number (6 digits)   student number (7 digits)   grades");
